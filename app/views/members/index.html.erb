@@ -1,4 +1,4 @@
-<%  page_title = "会員名簿" %>
+<%  page_title = "社員名簿" %>
 <h1><%=  page_title %></h1>
 
 <%= form_tag :search_members, method: :get do %>
@@ -6,12 +6,12 @@
   <%= submit_tag "検索" %></p>
 <% end %>
 
-<p><%= link_to "会員の新規登録", :new_member  %></p>
+<p><%= link_to "社員の新規登録", :new_member  %></p>
 
 <% if @members.present? %>
 <table class="list">
   <tr>
-    <th>背番号</th>
+    <th>社員番号</th>
     <th>ユーザー名</th>
     <th>氏名</th>
     <th>操作</th>
@@ -30,5 +30,5 @@
   <% end %>
 </table>
 <% else %>
-<p>会員情報がありません。</p>
+<p>社員情報がありません。</p>
 <% end %>

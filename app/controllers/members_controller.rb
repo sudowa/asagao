@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  # 会員一覧
+  # 社員一覧
   def index
     @members = Member.order("number")
   end
@@ -10,7 +10,7 @@ class MembersController < ApplicationController
     render "index"
   end
 
-  # 会員情報の詳細
+  # 社員情報の詳細
   def show
     @member = Member.find(params[:id])
   end
@@ -25,31 +25,31 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
 
-  # 会員の新規登録
+  # 社員の新規登録
   def create
     @member = Member.new(params[:member])
     if @member.save
-      redirect_to @member, notice: "会員を登録しました。"
+      redirect_to @member, notice: "社員を登録しました。"
     else
       render "new"
     end
   end
 
-  # 会員情報の更新
+  # 社員情報の更新
   def update
     @member = Member.find(params[:id])
     @member.assign_attributes(params[:member])
     if @member.save
-      redirect_to @member, notice: "会員情報を更新しました。"
+      redirect_to @member, notice: "社員情報を更新しました。"
     else
       render "edit"
     end
   end
 
-  # 会員の削除
+  # 社員の削除
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    redirect_to :members, notice: "会員を削除しました。"
+    redirect_to :members, notice: "社員を削除しました。"
   end
 end

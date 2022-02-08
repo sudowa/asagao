@@ -1,6 +1,6 @@
 module ApplicationHelper
   def page_title
-    title = "株式会社SAMIT"
+    title = "株式会社SUWARU"
     title = @page_title + " - " + title if @page_title
     title
   end
