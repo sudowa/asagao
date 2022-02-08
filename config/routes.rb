@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  #resources :top
   root "top#index"
-  get 'top/index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "about" => "top#about", as: "about"
+  get "lesson/:action(/:name)" => "lesson"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :members do
+    collection { get "search" }
+  end
 end
