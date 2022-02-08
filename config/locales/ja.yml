@@ -1,10 +1,10 @@
 ja:
   activerecord:
     models:
-      member: 会員情報
+      member: 社員情報
     attributes:
       member:
-        number: 背番号
+        number: 社員番号
         name: ユーザー名
         full_name: 氏名
         gender: 性別
